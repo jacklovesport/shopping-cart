@@ -1,5 +1,3 @@
-import React from 'react'
-
 function About() {
     return (
         <div className='home'>
@@ -20,7 +18,7 @@ function About() {
                   </p>
                 </div>
                 <div className="info-card">
-                  <h3>Its always been in the family</h3>
+                  <h3>Its always been in the family since 1994</h3>
                   <p>kjhdfkjsdhfjfh kjsdhfkjsdhf kjsdhfkjsdhfjkds
                     ksjdhfkjsdhf skjhf ksjdhfksjhf ksjdhf
                   </p>

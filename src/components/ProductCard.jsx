@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function ProductCard({product, addToCart}) {
     const [quantity, setQuantity] = useState(1)
