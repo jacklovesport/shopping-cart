@@ -11,6 +11,7 @@ function App() {
   const [cart, setCart] = useState([])
 
   const removeProduct = (id) => {
+    if (window.confirm('Are you sure you want to remove this item?'))
     setCart(prevCart => prevCart.filter(item => item.id !== id))
     }
 
@@ -29,7 +30,7 @@ function App() {
       }
     })
   }
-  
+
 const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0)
 
 const totalPrice = cart.reduce((total, item) => {
