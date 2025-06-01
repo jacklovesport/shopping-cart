@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 function Navbar({ cartItemCount }) {
     return (
@@ -13,10 +14,15 @@ function Navbar({ cartItemCount }) {
                 <div className='cart-icon'>
                 🛒 <span className="cart-count">{cartItemCount}</span>
                 </div>
-                <button className='checkout-button'>checkout</button> 
+                <Link to ='/checkout' className='checkout-btn'>Checkout</Link> 
             </div>       
         </nav>
     )
 }
 
 export default Navbar
+
+Navbar.propTypes = {
+    cartItemCount: PropTypes.number.isRequired
+  };
+  

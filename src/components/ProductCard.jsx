@@ -46,3 +46,16 @@ function ProductCard({product, addToCart}) {
 }
  export default ProductCard
 
+ import PropTypes from 'prop-types';
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number,
+    image: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number
+  }).isRequired,
+  addToCart: PropTypes.func.isRequired
+};
+
+

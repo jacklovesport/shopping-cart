@@ -4,10 +4,15 @@ import Navbar from './components/Navbar';
 import About from './pages/About'
 import Home from './pages/Home';
 import Shop from './pages/Shop';
+import Checkout from './pages/Checkout';
 
 
 function App() {
   const [cart, setCart] = useState([])
+
+  const removeProduct = (id) => {
+    setCart(prevCart => prevCart.filter(item => item.id !== id))
+    }
 
   const addToCart = (product, quantity) => {
     setCart(prevCart => {
@@ -24,7 +29,13 @@ function App() {
       }
     })
   }
+  
 const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0)
+
+const totalPrice = cart.reduce((total, item) => {
+  return total + item.price * item.quantity
+}, 0)
+
   return (
     <Router>
       <div className='app'>
@@ -34,6 +45,7 @@ const cartItemCount = cart.reduce((total, item) => total + item.quantity, 0)
           <Route path='/' element={<Home/>} />
           <Route path='/shop' element={<Shop addToCart={addToCart} />} />
           <Route path='/about' element={<About/>}/>
+          <Route path='/checkout' element={<Checkout cart={cart} removeProduct={removeProduct} totalPrice={totalPrice}/>}/>
           </Routes>
         </div>
       </div>
